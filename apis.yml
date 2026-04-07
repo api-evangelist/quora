@@ -1,6 +1,5 @@
 aid: quora
-url: 
-  https://raw.githubusercontent.com/api-evangelist/quora/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/quora/refs/heads/main/apis.yml
 apis:
   - aid: quora:quora-ads-conversion-api
     name: Quora Ads Conversion API
@@ -12,8 +11,7 @@ apis:
     properties:
       - url: https://www.quora.com/ads/conversion_api_doc
         type: Documentation
-      - url: 
-          https://quoraadsupport.zendesk.com/hc/en-us/articles/23065751885069-Conversion-API-Overview
+      - url: https://quoraadsupport.zendesk.com/hc/en-us/articles/23065751885069-Conversion-API-Overview
         type: GettingStarted
       - url: https://business.quora.com/api-partners
         type: Partners
@@ -27,9 +25,9 @@ apis:
     name: Poe API
     tags:
       - AI
-      - Large Language Models
       - Chatbots
       - Generative AI
+      - Large Language Models
     humanURL: https://creator.poe.com/
     baseURL: https://api.poe.com/v1
     properties:
@@ -39,16 +37,13 @@ apis:
         type: GettingStarted
       - url: https://creator.poe.com/api-reference
         type: OpenAPI
-      - url: 
-          https://creator.poe.com/docs/external-applications/openai-compatible-api
+      - url: https://creator.poe.com/docs/external-applications/openai-compatible-api
         type: OpenAICompatible
-      - url: 
-          https://creator.poe.com/docs/external-applications/anthropic-compatible-api
+      - url: https://creator.poe.com/docs/external-applications/anthropic-compatible-api
         type: AnthropicCompatible
       - url: https://creator.poe.com/docs/server-bots/poe-protocol-specification
         type: Specification
-      - url: 
-          https://creator.poe.com/docs/server-bots/fastapi_poe-python-reference
+      - url: https://creator.poe.com/docs/server-bots/fastapi_poe-python-reference
         type: SDKs
       - url: https://creator.poe.com/docs/resources/usage-api
         type: UsageAPI
@@ -67,9 +62,9 @@ apis:
       audio generation modalities.
 name: Quora
 tags:
-  - Q&A
-  - Knowledge
   - Community
+  - Knowledge
+  - Q&A
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
