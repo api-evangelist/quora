@@ -21,6 +21,7 @@ The Poe API (https://creator.poe.com/) is a developer platform that provides acc
 - **Documentation:** https://creator.poe.com/docs
 - **Quick Start:** https://creator.poe.com/docs/quick-start
 - **API Reference:** https://creator.poe.com/api-reference
+- **OpenAPI Specification (this repo):** [openapi/quora-poe-api-openapi.yml](openapi/quora-poe-api-openapi.yml)
 - **OpenAI-Compatible API:** https://creator.poe.com/docs/external-applications/openai-compatible-api
 - **Anthropic-Compatible API:** https://creator.poe.com/docs/external-applications/anthropic-compatible-api
 - **Poe Protocol Specification:** https://creator.poe.com/docs/server-bots/poe-protocol-specification

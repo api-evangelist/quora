@@ -36,6 +36,8 @@ apis:
       - url: https://creator.poe.com/docs/quick-start
         type: GettingStarted
       - url: https://creator.poe.com/api-reference
+        type: APIReference
+      - url: https://raw.githubusercontent.com/api-evangelist/quora/refs/heads/main/openapi/quora-poe-api-openapi.yml
         type: OpenAPI
       - url: https://creator.poe.com/docs/external-applications/openai-compatible-api
         type: OpenAICompatible
@@ -118,7 +120,7 @@ common:
     name: Poe Platform on GitHub
     type: GitHub
 created: '2026-03-24'
-modified: '2026-03-24'
+modified: '2026-04-28'
 specificationVersion: '0.19'
 description: >-
   Quora is a question-and-answer platform where users ask questions, share knowledge,
