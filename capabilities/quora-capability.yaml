@@ -1,0 +1,212 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Poe API
+  description: The Poe API is a developer platform by Quora that provides access to hundreds of AI models and bots through
+    a single OpenAI-compatible interface. Developers can call Chat Completions and Responses endpoints, list available models,
+    and monitor point usage and balance using a single API key issued at https://poe.com/api/keys. The API supports text,
+    image, video, and audio generation modalities and is rate-limited to 500 requests per minute.
+  tags:
+  - Quora
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: quora
+    baseUri: https://api.poe.com/v1
+    description: Poe API HTTP API.
+    authentication:
+      type: bearer
+      token: '{{QUORA_TOKEN}}'
+    resources:
+    - name: chat-completions
+      path: /chat/completions
+      operations:
+      - name: createchatcompletion
+        method: POST
+        description: Create a chat completion
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: responses
+      path: /responses
+      operations:
+      - name: createresponse
+        method: POST
+        description: Create a response
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: models
+      path: /models
+      operations:
+      - name: listmodels
+        method: GET
+        description: List models
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: usage-current-balance
+      path: /usage/current_balance
+      operations:
+      - name: getcurrentbalance
+        method: GET
+        description: Get current point balance
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: usage-points-history
+      path: /usage/points_history
+      operations:
+      - name: getpointshistory
+        method: GET
+        description: Get points usage history
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+          description: Maximum number of entries to return.
+        - name: starting_after
+          in: query
+          type: string
+          description: Cursor (`query_id`) to paginate after.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: quora-rest
+    description: REST adapter for Poe API.
+    resources:
+    - path: /chat/completions
+      name: createchatcompletion
+      operations:
+      - method: POST
+        name: createchatcompletion
+        description: Create a chat completion
+        call: quora.createchatcompletion
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /responses
+      name: createresponse
+      operations:
+      - method: POST
+        name: createresponse
+        description: Create a response
+        call: quora.createresponse
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /models
+      name: listmodels
+      operations:
+      - method: GET
+        name: listmodels
+        description: List models
+        call: quora.listmodels
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /usage/current_balance
+      name: getcurrentbalance
+      operations:
+      - method: GET
+        name: getcurrentbalance
+        description: Get current point balance
+        call: quora.getcurrentbalance
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /usage/points_history
+      name: getpointshistory
+      operations:
+      - method: GET
+        name: getpointshistory
+        description: Get points usage history
+        call: quora.getpointshistory
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: quora-mcp
+    transport: http
+    description: MCP adapter for Poe API for AI agent use.
+    tools:
+    - name: createchatcompletion
+      description: Create a chat completion
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: quora.createchatcompletion
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createresponse
+      description: Create a response
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: quora.createresponse
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listmodels
+      description: List models
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: quora.listmodels
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcurrentbalance
+      description: Get current point balance
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: quora.getcurrentbalance
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getpointshistory
+      description: Get points usage history
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: quora.getpointshistory
+      with:
+        limit: tools.limit
+        starting_after: tools.starting_after
+      inputParameters:
+      - name: limit
+        type: integer
+        description: Maximum number of entries to return.
+      - name: starting_after
+        type: string
+        description: Cursor (`query_id`) to paginate after.
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    QUORA_TOKEN: QUORA_TOKEN
