@@ -1,0 +1,942 @@
+{
+  "item": [
+    {
+      "id": "955fd239-7b12-4bcd-aabe-5387a1757ddc",
+      "name": "Chat",
+      "description": {
+        "content": "OpenAI-compatible chat completion endpoints.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b35192b6-9059-4461-a7aa-9c06d6ad7905",
+          "name": "Create a chat completion",
+          "request": {
+            "name": "Create a chat completion",
+            "description": {
+              "content": "Create an OpenAI-compatible chat completion using any supported Poe bot (for example Claude-Sonnet-4.6, GPT-5.4, or Gemini-3.1-Pro). Streaming is supported via `stream: true`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v1",
+                "chat",
+                "completions"
+              ],
+              "host": [
+                "api",
+                "poe",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\",\n      \"tool_call_id\": \"<string>\"\n    },\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\",\n      \"tool_call_id\": \"<string>\"\n    }\n  ],\n  \"stream\": false,\n  \"temperature\": \"<float>\",\n  \"top_p\": \"<float>\",\n  \"max_tokens\": \"<integer>\",\n  \"tools\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"tool_choice\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ba78aa78-84d1-4c27-99f3-b9624ca81012",
+              "name": "A chat completion object.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "chat",
+                    "completions"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"string\",\n      \"name\": \"string\",\n      \"tool_call_id\": \"string\"\n    },\n    {\n      \"role\": \"assistant\",\n      \"content\": \"string\",\n      \"name\": \"string\",\n      \"tool_call_id\": \"string\"\n    }\n  ],\n  \"stream\": false,\n  \"temperature\": \"<float>\",\n  \"top_p\": \"<float>\",\n  \"max_tokens\": \"<integer>\",\n  \"tools\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"tool_choice\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"object\": \"chat.completion\",\n  \"created\": 692,\n  \"model\": \"string\",\n  \"choices\": [\n    {\n      \"index\": 3426,\n      \"message\": {\n        \"role\": \"user\",\n        \"content\": \"string\",\n        \"name\": \"string\",\n        \"tool_call_id\": \"string\"\n      },\n      \"finish_reason\": \"string\"\n    },\n    {\n      \"index\": 1755,\n      \"message\": {\n        \"role\": \"system\",\n        \"content\": \"string\",\n        \"name\": \"string\",\n        \"tool_call_id\": \"string\"\n      },\n      \"finish_reason\": \"string\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 2146,\n    \"completion_tokens\": 9451,\n    \"total_tokens\": 369\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a9239cc5-f6a4-4f37-91b2-335a21617c81",
+              "name": "Invalid or missing API key.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "chat",
+                    "completions"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"string\",\n      \"name\": \"string\",\n      \"tool_call_id\": \"string\"\n    },\n    {\n      \"role\": \"assistant\",\n      \"content\": \"string\",\n      \"name\": \"string\",\n      \"tool_call_id\": \"string\"\n    }\n  ],\n  \"stream\": false,\n  \"temperature\": \"<float>\",\n  \"top_p\": \"<float>\",\n  \"max_tokens\": \"<integer>\",\n  \"tools\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"tool_choice\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"type\": \"string\",\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1a192c19-0bc4-4328-a524-a1dc964d0087",
+              "name": "Rate limit exceeded (500 requests per minute).",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "chat",
+                    "completions"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"string\",\n      \"name\": \"string\",\n      \"tool_call_id\": \"string\"\n    },\n    {\n      \"role\": \"assistant\",\n      \"content\": \"string\",\n      \"name\": \"string\",\n      \"tool_call_id\": \"string\"\n    }\n  ],\n  \"stream\": false,\n  \"temperature\": \"<float>\",\n  \"top_p\": \"<float>\",\n  \"max_tokens\": \"<integer>\",\n  \"tools\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"tool_choice\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"type\": \"string\",\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "d04908b5-47b3-4fce-8ad7-3c5a5cd6207a",
+      "name": "Responses",
+      "description": {
+        "content": "Advanced Responses API supporting reasoning, web search, and structured outputs.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "731d1cca-c133-468e-bc8a-99bcfb74f87f",
+          "name": "Create a response",
+          "request": {
+            "name": "Create a response",
+            "description": {
+              "content": "Create a response using the Responses API, which supports advanced features such as reasoning, web search, structured outputs, and multi-turn conversations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v1",
+                "responses"
+              ],
+              "host": [
+                "api",
+                "poe",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"<string>\",\n  \"input\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"tools\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"response_format\": \"<object>\",\n  \"stream\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1148dd2f-baff-48d1-acf9-46e3782f4b89",
+              "name": "A response object.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "responses"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"input\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"tools\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"response_format\": \"<object>\",\n  \"stream\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"object\": \"response\",\n  \"created_at\": 7708,\n  \"model\": \"string\",\n  \"usage\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eedc06c6-e376-454e-8e67-0d7678c54ac7",
+              "name": "Invalid or missing API key.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "responses"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"input\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"tools\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"response_format\": \"<object>\",\n  \"stream\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"type\": \"string\",\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "204fb105-3d2b-4505-9b10-5ca026d6c4fa",
+              "name": "Rate limit exceeded (500 requests per minute).",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "responses"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"input\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"tools\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"response_format\": \"<object>\",\n  \"stream\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"type\": \"string\",\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "cfe9e77a-efd6-449d-861c-2c726e14af49",
+      "name": "Models",
+      "description": {
+        "content": "Discover available bots and models.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "528f37c3-be04-4fd4-b31f-a0f5e680971a",
+          "name": "List models",
+          "request": {
+            "name": "List models",
+            "description": {
+              "content": "List the AI models and bots available through the Poe API.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v1",
+                "models"
+              ],
+              "host": [
+                "api",
+                "poe",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "be9d9e8d-9c0f-4aca-887c-4bcaff3bdc6d",
+              "name": "A list of available models.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "models"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"object\": \"model\",\n      \"created\": 5944,\n      \"owned_by\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"object\": \"model\",\n      \"created\": 111,\n      \"owned_by\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "087e4832-88c7-4bb4-b715-8b890e762e8f",
+              "name": "Invalid or missing API key.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "models"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"type\": \"string\",\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f284adbf-838b-4470-9c92-9c7c196afcd5",
+      "name": "Usage",
+      "description": {
+        "content": "Track point balance and usage history.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1283c13c-7e9a-4ef4-bc7c-92a0a2fd653d",
+          "name": "Get current point balance",
+          "request": {
+            "name": "Get current point balance",
+            "description": {
+              "content": "Returns the caller's current available Poe point balance.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "usage",
+                "current_balance"
+              ],
+              "host": [
+                "api",
+                "poe",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8733cca4-57ec-40cb-a8da-44012ce7e6e9",
+              "name": "Current point balance.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "usage",
+                    "current_balance"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"current_point_balance\": 9063\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "738d3ebc-53f1-40e2-980e-81d1250e950f",
+              "name": "Invalid or missing API key.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "usage",
+                    "current_balance"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"type\": \"string\",\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fa102dca-a0c8-430a-a4be-9a96641da52d",
+          "name": "Get points usage history",
+          "request": {
+            "name": "Get points usage history",
+            "description": {
+              "content": "Retrieve a paginated history of point usage entries. Entries up to 30 days old are available.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "usage",
+                "points_history"
+              ],
+              "host": [
+                "api",
+                "poe",
+                "com"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Maximum number of entries to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "starting_after",
+                  "value": "<string>",
+                  "description": "Cursor (`query_id`) to paginate after."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0a852959-f064-4def-84fe-13908692b470",
+              "name": "A page of usage history entries.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "usage",
+                    "points_history"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"query_id\": \"string\",\n      \"bot\": \"string\",\n      \"created_at\": 4705,\n      \"cost_usd\": 1175.6986713115525,\n      \"cost_points\": 6771,\n      \"cost_breakdown\": {},\n      \"usage_type\": \"string\",\n      \"chat_name\": \"string\",\n      \"api_key_name\": \"string\",\n      \"canvas_app_name\": \"string\"\n    },\n    {\n      \"query_id\": \"string\",\n      \"bot\": \"string\",\n      \"created_at\": 4641,\n      \"cost_usd\": 6915.414921272682,\n      \"cost_points\": 733,\n      \"cost_breakdown\": {},\n      \"usage_type\": \"string\",\n      \"chat_name\": \"string\",\n      \"api_key_name\": \"string\",\n      \"canvas_app_name\": \"string\"\n    }\n  ],\n  \"has_more\": false,\n  \"next_cursor\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9a02bc5d-a7a1-441a-a3c7-1f6e39f16d11",
+              "name": "Invalid or missing API key.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "usage",
+                    "points_history"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"type\": \"string\",\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.poe.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "567aef64-78f1-4bf0-b689-a2db7b1714d2",
+    "name": "Poe API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Poe API is a developer platform by Quora that provides access to hundreds of AI models and bots through a single OpenAI-compatible interface. Developers can call Chat Completions and Responses endpoints, list available models, and monitor point usage and balance using a single API key issued at https://poe.com/api/keys. The API supports text, image, video, and audio generation modalities and is rate-limited to 500 requests per minute.\n\nContact Support:\n Name: Poe Creator Platform",
+      "type": "text/plain"
+    }
+  }
+}
