@@ -73,7 +73,7 @@ common:
     type: Website
   - url: https://www.quora.com/
     name: Sign Up
-    type: SignUp
+    type: Signup
   - url: https://www.quora.com/
     name: Login
     type: Login
