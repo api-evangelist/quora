@@ -1,0 +1,14 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/quora-poe-api-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: BearerAuth
+  type: http
+  scheme: bearer
+  description: 'Bearer token issued from https://poe.com/api/keys. Pass as `Authorization: Bearer
+    <api_key>`.'
+  sources:
+  - openapi/quora-poe-api-openapi.yml
