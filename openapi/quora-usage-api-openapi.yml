@@ -1,0 +1,141 @@
+openapi: 3.1.0
+info:
+  title: Poe Chat Usage API
+  version: '1.0'
+  summary: OpenAI-compatible API for accessing AI models and bots on Poe.
+  description: The Poe API is a developer platform by Quora that provides access to hundreds of AI models and bots through a single OpenAI-compatible interface. Developers can call Chat Completions and Responses endpoints, list available models, and monitor point usage and balance using a single API key issued at https://poe.com/api/keys. The API supports text, image, video, and audio generation modalities and is rate-limited to 500 requests per minute.
+  contact:
+    name: Poe Creator Platform
+    url: https://creator.poe.com/
+  license:
+    name: Poe Terms of Service
+    url: https://poe.com/tos
+servers:
+- url: https://api.poe.com/v1
+  description: Poe API (OpenAI-compatible Chat Completions and Responses endpoints)
+- url: https://api.poe.com
+  description: Poe API root (Usage and Balance endpoints)
+security:
+- BearerAuth: []
+tags:
+- name: Usage
+  description: Track point balance and usage history.
+paths:
+  /usage/current_balance:
+    get:
+      tags:
+      - Usage
+      summary: Get current point balance
+      description: Returns the caller's current available Poe point balance.
+      operationId: getCurrentBalance
+      servers:
+      - url: https://api.poe.com
+      responses:
+        '200':
+          description: Current point balance.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CurrentBalance'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /usage/points_history:
+    get:
+      tags:
+      - Usage
+      summary: Get points usage history
+      description: Retrieve a paginated history of point usage entries. Entries up to 30 days old are available.
+      operationId: getPointsHistory
+      servers:
+      - url: https://api.poe.com
+      parameters:
+      - in: query
+        name: limit
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 100
+          default: 20
+        description: Maximum number of entries to return.
+      - in: query
+        name: starting_after
+        schema:
+          type: string
+        description: Cursor (`query_id`) to paginate after.
+      responses:
+        '200':
+          description: A page of usage history entries.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PointsHistory'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            type:
+              type: string
+            message:
+              type: string
+            code:
+              type: string
+    PointsHistory:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/PointsHistoryEntry'
+        has_more:
+          type: boolean
+        next_cursor:
+          type: string
+          nullable: true
+    PointsHistoryEntry:
+      type: object
+      properties:
+        query_id:
+          type: string
+        bot:
+          type: string
+        created_at:
+          type: integer
+        cost_usd:
+          type: number
+          format: float
+        cost_points:
+          type: integer
+        cost_breakdown:
+          type: object
+        usage_type:
+          type: string
+        chat_name:
+          type: string
+        api_key_name:
+          type: string
+        canvas_app_name:
+          type: string
+    CurrentBalance:
+      type: object
+      properties:
+        current_point_balance:
+          type: integer
+          description: Available Poe points.
+  responses:
+    Unauthorized:
+      description: Invalid or missing API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Bearer token issued from https://poe.com/api/keys. Pass as `Authorization: Bearer <api_key>`.'

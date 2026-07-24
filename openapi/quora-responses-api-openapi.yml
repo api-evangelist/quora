@@ -1,0 +1,124 @@
+openapi: 3.1.0
+info:
+  title: Poe Chat Responses API
+  version: '1.0'
+  summary: OpenAI-compatible API for accessing AI models and bots on Poe.
+  description: The Poe API is a developer platform by Quora that provides access to hundreds of AI models and bots through a single OpenAI-compatible interface. Developers can call Chat Completions and Responses endpoints, list available models, and monitor point usage and balance using a single API key issued at https://poe.com/api/keys. The API supports text, image, video, and audio generation modalities and is rate-limited to 500 requests per minute.
+  contact:
+    name: Poe Creator Platform
+    url: https://creator.poe.com/
+  license:
+    name: Poe Terms of Service
+    url: https://poe.com/tos
+servers:
+- url: https://api.poe.com/v1
+  description: Poe API (OpenAI-compatible Chat Completions and Responses endpoints)
+- url: https://api.poe.com
+  description: Poe API root (Usage and Balance endpoints)
+security:
+- BearerAuth: []
+tags:
+- name: Responses
+  description: Advanced Responses API supporting reasoning, web search, and structured outputs.
+paths:
+  /responses:
+    post:
+      tags:
+      - Responses
+      summary: Create a response
+      description: Create a response using the Responses API, which supports advanced features such as reasoning, web search, structured outputs, and multi-turn conversations.
+      operationId: createResponse
+      servers:
+      - url: https://api.poe.com/v1
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResponseRequest'
+      responses:
+        '200':
+          description: A response object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseObject'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+components:
+  schemas:
+    ResponseObject:
+      type: object
+      properties:
+        id:
+          type: string
+        object:
+          type: string
+          example: response
+        created_at:
+          type: integer
+        model:
+          type: string
+        output:
+          type: array
+          items:
+            type: object
+        usage:
+          type: object
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            type:
+              type: string
+            message:
+              type: string
+            code:
+              type: string
+    ResponseRequest:
+      type: object
+      required:
+      - model
+      - input
+      properties:
+        model:
+          type: string
+        input:
+          oneOf:
+          - type: string
+          - type: array
+            items:
+              type: object
+        instructions:
+          type: string
+        tools:
+          type: array
+          items:
+            type: object
+        response_format:
+          type: object
+        stream:
+          type: boolean
+          default: false
+  responses:
+    Unauthorized:
+      description: Invalid or missing API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    RateLimited:
+      description: Rate limit exceeded (500 requests per minute).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Bearer token issued from https://poe.com/api/keys. Pass as `Authorization: Bearer <api_key>`.'
