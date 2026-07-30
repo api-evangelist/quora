@@ -1,71 +1,174 @@
 aid: quora
 url: https://raw.githubusercontent.com/api-evangelist/quora/refs/heads/main/apis.yml
 apis:
-  - aid: quora:quora-ads-conversion-api
-    name: Quora Ads Conversion API
-    tags:
-      - Advertising
-      - Conversions
-      - Marketing
-    humanURL: https://www.quora.com/ads/conversion_api_doc
-    properties:
-      - url: https://www.quora.com/ads/conversion_api_doc
-        type: Documentation
-      - url: https://quoraadsupport.zendesk.com/hc/en-us/articles/23065751885069-Conversion-API-Overview
-        type: GettingStarted
-      - url: https://business.quora.com/api-partners
-        type: Partners
-    description: >-
-      The Quora Ads Conversion API (CAPI) allows advertisers to send events such as website events, app installs, and
-      offline conversions directly to Quora Ads Manager. This server-to-server integration enables real-time data
-      connections that improve conversion match rates, increasing return on ad spend (ROAS) and lowering cost per action
-      (CPA).
-  - aid: quora:poe-api
-    name: Poe API
-    tags:
-      - AI
-      - Chatbots
-      - Generative AI
-      - Large Language Models
-    humanURL: https://creator.poe.com/
-    baseURL: https://api.poe.com/v1
-    properties:
-      - url: https://creator.poe.com/docs
-        type: Documentation
-      - url: https://creator.poe.com/docs/quick-start
-        type: GettingStarted
-      - url: https://creator.poe.com/api-reference
-        type: APIReference
-      - url: https://raw.githubusercontent.com/api-evangelist/quora/refs/heads/main/openapi/quora-poe-api-openapi.yml
-        type: OpenAPI
-      - url: https://creator.poe.com/docs/external-applications/openai-compatible-api
-        type: OpenAICompatible
-      - url: https://creator.poe.com/docs/external-applications/anthropic-compatible-api
-        type: AnthropicCompatible
-      - url: https://creator.poe.com/docs/server-bots/poe-protocol-specification
-        type: Specification
-      - url: https://creator.poe.com/docs/server-bots/fastapi_poe-python-reference
-        type: SDKs
-      - url: https://creator.poe.com/docs/resources/usage-api
-        type: UsageAPI
-      - url: https://creator.poe.com/changelog
-        type: ChangeLog
-      - url: https://poe.com/api/keys
-        type: Authentication
-      - url: https://github.com/poe-platform/fastapi_poe
-        type: SDKs
-    description: >-
-      The Poe API is a developer platform by Quora that provides access to hundreds of AI models and bots through a
-      single OpenAI-compatible interface. Developers can access frontier models from major labs including Claude, GPT-4,
-      Gemini, and open-source models, as well as millions of community-created bots, all through one API key and billing
-      system. The platform supports text, image, video, and audio generation modalities.
+- aid: quora:quora-ads-conversion-api
+  name: Quora Ads Conversion API
+  tags:
+  - Advertising
+  - Conversions
+  - Marketing
+  humanURL: https://www.quora.com/ads/conversion_api_doc
+  properties:
+  - url: https://www.quora.com/ads/conversion_api_doc
+    type: Documentation
+  - url: >-
+      https://quoraadsupport.zendesk.com/hc/en-us/articles/23065751885069-Conversion-API-Overview
+    type: GettingStarted
+  - url: https://business.quora.com/api-partners
+    type: Partners
+  description: >-
+    The Quora Ads Conversion API (CAPI) allows advertisers to send events such as website events, app
+    installs, and offline conversions directly to Quora Ads Manager. This server-to-server integration
+    enables real-time data connections that improve conversion match rates, increasing return on ad spend
+    (ROAS) and lowering cost per action (CPA).
+- aid: quora:quora-chat-api
+  name: Quora Chat API
+  description: OpenAI-compatible chat completion endpoints.
+  humanURL: https://www.quora.com/ads/conversion_api_doc
+  baseURL: https://api.poe.com/v1
+  tags:
+  - Chat
+  properties:
+  - type: OpenAPI
+    url: openapi/quora-chat-api-openapi.yml
+  - type: Documentation
+    url: https://creator.poe.com/docs
+  - type: GettingStarted
+    url: https://creator.poe.com/docs/quick-start
+  - type: APIReference
+    url: https://creator.poe.com/api-reference
+  - type: OpenAICompatible
+    url: https://creator.poe.com/docs/external-applications/openai-compatible-api
+  - type: AnthropicCompatible
+    url: https://creator.poe.com/docs/external-applications/anthropic-compatible-api
+  - type: Specification
+    url: https://creator.poe.com/docs/server-bots/poe-protocol-specification
+  - type: SDKs
+    url: https://creator.poe.com/docs/server-bots/fastapi_poe-python-reference
+  - type: UsageAPI
+    url: https://creator.poe.com/docs/resources/usage-api
+  - type: ChangeLog
+    url: https://creator.poe.com/changelog
+  - type: Authentication
+    url: https://poe.com/api/keys
+  - type: SDKs
+    url: https://github.com/poe-platform/fastapi_poe
+- aid: quora:quora-models-api
+  name: Quora Models API
+  description: Discover available bots and models.
+  humanURL: https://www.quora.com/ads/conversion_api_doc
+  baseURL: https://api.poe.com/v1
+  tags:
+  - Models
+  properties:
+  - type: OpenAPI
+    url: openapi/quora-models-api-openapi.yml
+  - type: Documentation
+    url: https://creator.poe.com/docs
+  - type: GettingStarted
+    url: https://creator.poe.com/docs/quick-start
+  - type: APIReference
+    url: https://creator.poe.com/api-reference
+  - type: OpenAICompatible
+    url: https://creator.poe.com/docs/external-applications/openai-compatible-api
+  - type: AnthropicCompatible
+    url: https://creator.poe.com/docs/external-applications/anthropic-compatible-api
+  - type: Specification
+    url: https://creator.poe.com/docs/server-bots/poe-protocol-specification
+  - type: SDKs
+    url: https://creator.poe.com/docs/server-bots/fastapi_poe-python-reference
+  - type: UsageAPI
+    url: https://creator.poe.com/docs/resources/usage-api
+  - type: ChangeLog
+    url: https://creator.poe.com/changelog
+  - type: Authentication
+    url: https://poe.com/api/keys
+  - type: SDKs
+    url: https://github.com/poe-platform/fastapi_poe
+- aid: quora:quora-responses-api
+  name: Quora Responses API
+  description: Advanced Responses API supporting reasoning, web search, and structured outputs.
+  humanURL: https://www.quora.com/ads/conversion_api_doc
+  baseURL: https://api.poe.com/v1
+  tags:
+  - Responses
+  properties:
+  - type: OpenAPI
+    url: openapi/quora-responses-api-openapi.yml
+  - type: Documentation
+    url: https://creator.poe.com/docs
+  - type: GettingStarted
+    url: https://creator.poe.com/docs/quick-start
+  - type: APIReference
+    url: https://creator.poe.com/api-reference
+  - type: OpenAICompatible
+    url: https://creator.poe.com/docs/external-applications/openai-compatible-api
+  - type: AnthropicCompatible
+    url: https://creator.poe.com/docs/external-applications/anthropic-compatible-api
+  - type: Specification
+    url: https://creator.poe.com/docs/server-bots/poe-protocol-specification
+  - type: SDKs
+    url: https://creator.poe.com/docs/server-bots/fastapi_poe-python-reference
+  - type: UsageAPI
+    url: https://creator.poe.com/docs/resources/usage-api
+  - type: ChangeLog
+    url: https://creator.poe.com/changelog
+  - type: Authentication
+    url: https://poe.com/api/keys
+  - type: SDKs
+    url: https://github.com/poe-platform/fastapi_poe
+- aid: quora:quora-usage-api
+  name: Quora Usage API
+  description: Track point balance and usage history.
+  humanURL: https://www.quora.com/ads/conversion_api_doc
+  baseURL: https://api.poe.com/v1
+  tags:
+  - Usage
+  properties:
+  - type: OpenAPI
+    url: openapi/quora-usage-api-openapi.yml
+  - type: Documentation
+    url: https://creator.poe.com/docs
+  - type: GettingStarted
+    url: https://creator.poe.com/docs/quick-start
+  - type: APIReference
+    url: https://creator.poe.com/api-reference
+  - type: OpenAICompatible
+    url: https://creator.poe.com/docs/external-applications/openai-compatible-api
+  - type: AnthropicCompatible
+    url: https://creator.poe.com/docs/external-applications/anthropic-compatible-api
+  - type: Specification
+    url: https://creator.poe.com/docs/server-bots/poe-protocol-specification
+  - type: SDKs
+    url: https://creator.poe.com/docs/server-bots/fastapi_poe-python-reference
+  - type: UsageAPI
+    url: https://creator.poe.com/docs/resources/usage-api
+  - type: ChangeLog
+    url: https://creator.poe.com/changelog
+  - type: Authentication
+    url: https://poe.com/api/keys
+  - type: SDKs
+    url: https://github.com/poe-platform/fastapi_poe
 name: Quora
 tags:
   - Community
   - Knowledge
   - Q&A
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/quora.png
 access: 3rd-Party
 common:
   - type: AgenticAccess
