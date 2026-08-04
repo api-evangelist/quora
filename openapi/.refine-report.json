@@ -1,0 +1,20 @@
+{
+  "provider": "quora",
+  "sources": [
+    "quora-chat-api-openapi.yml",
+    "quora-models-api-openapi.yml",
+    "quora-responses-api-openapi.yml",
+    "quora-usage-api-openapi.yml"
+  ],
+  "outputs": [
+    "quora-chat-api-openapi.yml",
+    "quora-models-api-openapi.yml",
+    "quora-responses-api-openapi.yml",
+    "quora-usage-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
