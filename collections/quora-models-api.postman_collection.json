@@ -1,0 +1,174 @@
+{
+  "item": [
+    {
+      "id": "cf4ad39f-3f67-4faf-a09c-fca770824bb9",
+      "name": "Models",
+      "description": {
+        "content": "Discover available bots and models.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "05310df6-a333-4a53-be6b-0177b91de6f2",
+          "name": "List models",
+          "request": {
+            "name": "List models",
+            "description": {
+              "content": "List the AI models and bots available through the Poe API.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v1",
+                "models"
+              ],
+              "host": [
+                "api",
+                "poe",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "343a66ec-73d6-44c0-a703-4031089c0cb3",
+              "name": "A list of available models.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "models"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"object\": \"list\",\n  \"data\": [\n    {\n      \"id\": \"string\",\n      \"object\": \"model\",\n      \"created\": 119,\n      \"owned_by\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"object\": \"model\",\n      \"created\": 2813,\n      \"owned_by\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2901212b-9244-414c-86c2-6e763f0578ec",
+              "name": "Invalid or missing API key.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "models"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"type\": \"string\",\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.poe.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8a669464-cbe7-4738-9643-ee509c65539a",
+    "name": "Poe Chat Models API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Poe API is a developer platform by Quora that provides access to hundreds of AI models and bots through a single OpenAI-compatible interface. Developers can call Chat Completions and Responses endpoints, list available models, and monitor point usage and balance using a single API key issued at https://poe.com/api/keys. The API supports text, image, video, and audio generation modalities and is rate-limited to 500 requests per minute.\n\nContact Support:\n Name: Poe Creator Platform",
+      "type": "text/plain"
+    }
+  }
+}

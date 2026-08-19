@@ -1,0 +1,262 @@
+{
+  "item": [
+    {
+      "id": "f8ed2dfb-27a5-4a6a-9778-15df98aa7a8e",
+      "name": "Chat",
+      "description": {
+        "content": "OpenAI-compatible chat completion endpoints.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "50285bb0-b142-4a0f-b072-52f69ec933b6",
+          "name": "Create a chat completion",
+          "request": {
+            "name": "Create a chat completion",
+            "description": {
+              "content": "Create an OpenAI-compatible chat completion using any supported Poe bot (for example Claude-Sonnet-4.6, GPT-5.4, or Gemini-3.1-Pro). Streaming is supported via `stream: true`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v1",
+                "chat",
+                "completions"
+              ],
+              "host": [
+                "api",
+                "poe",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\",\n      \"tool_call_id\": \"<string>\"\n    },\n    {\n      \"role\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\",\n      \"tool_call_id\": \"<string>\"\n    }\n  ],\n  \"stream\": false,\n  \"temperature\": \"<float>\",\n  \"top_p\": \"<float>\",\n  \"max_tokens\": \"<integer>\",\n  \"tools\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"tool_choice\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d9d7e825-dbcc-40e4-9f68-420a8267305b",
+              "name": "A chat completion object.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "chat",
+                    "completions"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"string\",\n      \"name\": \"string\",\n      \"tool_call_id\": \"string\"\n    },\n    {\n      \"role\": \"assistant\",\n      \"content\": \"string\",\n      \"name\": \"string\",\n      \"tool_call_id\": \"string\"\n    }\n  ],\n  \"stream\": false,\n  \"temperature\": \"<float>\",\n  \"top_p\": \"<float>\",\n  \"max_tokens\": \"<integer>\",\n  \"tools\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"tool_choice\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"object\": \"chat.completion\",\n  \"created\": 595,\n  \"model\": \"string\",\n  \"choices\": [\n    {\n      \"index\": 1937,\n      \"message\": {\n        \"role\": \"tool\",\n        \"content\": \"string\",\n        \"name\": \"string\",\n        \"tool_call_id\": \"string\"\n      },\n      \"finish_reason\": \"string\"\n    },\n    {\n      \"index\": 8363,\n      \"message\": {\n        \"role\": \"user\",\n        \"content\": \"string\",\n        \"name\": \"string\",\n        \"tool_call_id\": \"string\"\n      },\n      \"finish_reason\": \"string\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 3866,\n    \"completion_tokens\": 4606,\n    \"total_tokens\": 408\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "08fea677-968f-4311-92c9-926f4b9230ec",
+              "name": "Invalid or missing API key.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "chat",
+                    "completions"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"string\",\n      \"name\": \"string\",\n      \"tool_call_id\": \"string\"\n    },\n    {\n      \"role\": \"assistant\",\n      \"content\": \"string\",\n      \"name\": \"string\",\n      \"tool_call_id\": \"string\"\n    }\n  ],\n  \"stream\": false,\n  \"temperature\": \"<float>\",\n  \"top_p\": \"<float>\",\n  \"max_tokens\": \"<integer>\",\n  \"tools\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"tool_choice\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"type\": \"string\",\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e983cc18-a106-4dd8-b8a3-ef4cf54e648c",
+              "name": "Rate limit exceeded (500 requests per minute).",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "chat",
+                    "completions"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"string\",\n      \"name\": \"string\",\n      \"tool_call_id\": \"string\"\n    },\n    {\n      \"role\": \"assistant\",\n      \"content\": \"string\",\n      \"name\": \"string\",\n      \"tool_call_id\": \"string\"\n    }\n  ],\n  \"stream\": false,\n  \"temperature\": \"<float>\",\n  \"top_p\": \"<float>\",\n  \"max_tokens\": \"<integer>\",\n  \"tools\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"tool_choice\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"type\": \"string\",\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.poe.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8b9621d7-863e-4c38-a259-08d290111715",
+    "name": "Poe Chat API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Poe API is a developer platform by Quora that provides access to hundreds of AI models and bots through a single OpenAI-compatible interface. Developers can call Chat Completions and Responses endpoints, list available models, and monitor point usage and balance using a single API key issued at https://poe.com/api/keys. The API supports text, image, video, and audio generation modalities and is rate-limited to 500 requests per minute.\n\nContact Support:\n Name: Poe Creator Platform",
+      "type": "text/plain"
+    }
+  }
+}

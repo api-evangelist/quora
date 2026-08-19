@@ -1,0 +1,258 @@
+{
+  "item": [
+    {
+      "id": "b1d82569-07ba-4d79-a908-c779dbffe5f5",
+      "name": "Responses",
+      "description": {
+        "content": "Advanced Responses API supporting reasoning, web search, and structured outputs.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3b2c1be2-c722-4902-95db-f008f3c48a00",
+          "name": "Create a response",
+          "request": {
+            "name": "Create a response",
+            "description": {
+              "content": "Create a response using the Responses API, which supports advanced features such as reasoning, web search, structured outputs, and multi-turn conversations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "v1",
+                "responses"
+              ],
+              "host": [
+                "api",
+                "poe",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"<string>\",\n  \"input\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"tools\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"response_format\": \"<object>\",\n  \"stream\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6b89f693-425f-42bc-88f1-b241c1485a3e",
+              "name": "A response object.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "responses"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"input\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"tools\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"response_format\": \"<object>\",\n  \"stream\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"object\": \"response\",\n  \"created_at\": 9229,\n  \"model\": \"string\",\n  \"usage\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "99607b0c-615f-4cfb-95c2-37fa2fe2f7c3",
+              "name": "Invalid or missing API key.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "responses"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"input\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"tools\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"response_format\": \"<object>\",\n  \"stream\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"type\": \"string\",\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "59d1b7da-3f32-4cc1-be3c-39587ee92418",
+              "name": "Rate limit exceeded (500 requests per minute).",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "v1",
+                    "responses"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model\": \"<string>\",\n  \"input\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"tools\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"response_format\": \"<object>\",\n  \"stream\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"type\": \"string\",\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.poe.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "54e6e99d-7da4-4b4c-b2e1-4a160366c25c",
+    "name": "Poe Chat Responses API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Poe API is a developer platform by Quora that provides access to hundreds of AI models and bots through a single OpenAI-compatible interface. Developers can call Chat Completions and Responses endpoints, list available models, and monitor point usage and balance using a single API key issued at https://poe.com/api/keys. The API supports text, image, video, and audio generation modalities and is rate-limited to 500 requests per minute.\n\nContact Support:\n Name: Poe Creator Platform",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,338 @@
+{
+  "item": [
+    {
+      "id": "09c91ab8-d0fa-4590-9d58-dedb3fff22b9",
+      "name": "Usage",
+      "description": {
+        "content": "Track point balance and usage history.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "83f7d4f3-8453-4e3b-b550-d6e07300e84a",
+          "name": "Get current point balance",
+          "request": {
+            "name": "Get current point balance",
+            "description": {
+              "content": "Returns the caller's current available Poe point balance.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "usage",
+                "current_balance"
+              ],
+              "host": [
+                "api",
+                "poe",
+                "com"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "604f265f-0afa-45f4-b857-b514419ef4ca",
+              "name": "Current point balance.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "usage",
+                    "current_balance"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"current_point_balance\": 8751\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6e3bc01f-0eb1-468a-a29a-9c9a4840fab4",
+              "name": "Invalid or missing API key.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "usage",
+                    "current_balance"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"type\": \"string\",\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b63eb53a-73c1-4b4a-adc8-4b32c59937db",
+          "name": "Get points usage history",
+          "request": {
+            "name": "Get points usage history",
+            "description": {
+              "content": "Retrieve a paginated history of point usage entries. Entries up to 30 days old are available.",
+              "type": "text/plain"
+            },
+            "url": {
+              "protocol": "https",
+              "path": [
+                "usage",
+                "points_history"
+              ],
+              "host": [
+                "api",
+                "poe",
+                "com"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Maximum number of entries to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "starting_after",
+                  "value": "<string>",
+                  "description": "Cursor (`query_id`) to paginate after."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "94dbc24e-367f-4f8c-9d94-a16218e091af",
+              "name": "A page of usage history entries.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "usage",
+                    "points_history"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"query_id\": \"string\",\n      \"bot\": \"string\",\n      \"created_at\": 7675,\n      \"cost_usd\": 2723.68427125914,\n      \"cost_points\": 9499,\n      \"cost_breakdown\": {},\n      \"usage_type\": \"string\",\n      \"chat_name\": \"string\",\n      \"api_key_name\": \"string\",\n      \"canvas_app_name\": \"string\"\n    },\n    {\n      \"query_id\": \"string\",\n      \"bot\": \"string\",\n      \"created_at\": 5836,\n      \"cost_usd\": 3843.6346666129093,\n      \"cost_points\": 9895,\n      \"cost_breakdown\": {},\n      \"usage_type\": \"string\",\n      \"chat_name\": \"string\",\n      \"api_key_name\": \"string\",\n      \"canvas_app_name\": \"string\"\n    }\n  ],\n  \"has_more\": false,\n  \"next_cursor\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "561d1618-2e3c-417b-94c9-833e5d923b04",
+              "name": "Invalid or missing API key.",
+              "originalRequest": {
+                "url": {
+                  "protocol": "https",
+                  "path": [
+                    "usage",
+                    "points_history"
+                  ],
+                  "host": [
+                    "api",
+                    "poe",
+                    "com"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"type\": \"string\",\n    \"message\": \"string\",\n    \"code\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.poe.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bf9ae320-5e2b-41d4-95ce-077b121a6614",
+    "name": "Poe Chat Usage API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Poe API is a developer platform by Quora that provides access to hundreds of AI models and bots through a single OpenAI-compatible interface. Developers can call Chat Completions and Responses endpoints, list available models, and monitor point usage and balance using a single API key issued at https://poe.com/api/keys. The API supports text, image, video, and audio generation modalities and is rate-limited to 500 requests per minute.\n\nContact Support:\n Name: Poe Creator Platform",
+      "type": "text/plain"
+    }
+  }
+}
