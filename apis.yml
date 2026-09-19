@@ -5,6 +5,10 @@ apis:
   name: Quora Ads Conversion API
   tags:
   - Advertising
+  - Conversion
+  - Marketing
+  tags_raw:
+  - Advertising
   - Conversions
   - Marketing
   humanURL: https://www.quora.com/ads/conversion_api_doc
