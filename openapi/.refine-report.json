@@ -1,10 +1,7 @@
 {
   "provider": "quora",
   "sources": [
-    "quora-chat-api-openapi.yml",
-    "quora-models-api-openapi.yml",
-    "quora-responses-api-openapi.yml",
-    "quora-usage-api-openapi.yml"
+    "_original/quora-poe-api-openapi.yml"
   ],
   "outputs": [
     "quora-chat-api-openapi.yml",
@@ -15,6 +12,15 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "quora-poe-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "quora-chat-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "quora-models-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "quora-responses-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "quora-usage-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
