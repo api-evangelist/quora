@@ -67,6 +67,18 @@ components:
             type: object
         usage:
           type: object
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            type:
+              type: string
+            message:
+              type: string
+            code:
+              type: string
     ResponseRequest:
       type: object
       required:
@@ -92,27 +104,15 @@ components:
         stream:
           type: boolean
           default: false
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            type:
-              type: string
-            message:
-              type: string
-            code:
-              type: string
   responses:
-    Unauthorized:
-      description: Invalid or missing API key.
+    RateLimited:
+      description: Rate limit exceeded (500 requests per minute).
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    RateLimited:
-      description: Rate limit exceeded (500 requests per minute).
+    Unauthorized:
+      description: Invalid or missing API key.
       content:
         application/json:
           schema:
