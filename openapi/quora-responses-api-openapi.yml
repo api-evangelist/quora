@@ -48,25 +48,20 @@ paths:
         '429':
           $ref: '#/components/responses/RateLimited'
 components:
+  responses:
+    RateLimited:
+      description: Rate limit exceeded (500 requests per minute).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Invalid or missing API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
-    ResponseObject:
-      type: object
-      properties:
-        id:
-          type: string
-        object:
-          type: string
-          example: response
-        created_at:
-          type: integer
-        model:
-          type: string
-        output:
-          type: array
-          items:
-            type: object
-        usage:
-          type: object
     Error:
       type: object
       properties:
@@ -104,19 +99,24 @@ components:
         stream:
           type: boolean
           default: false
-  responses:
-    RateLimited:
-      description: Rate limit exceeded (500 requests per minute).
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Invalid or missing API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+    ResponseObject:
+      type: object
+      properties:
+        id:
+          type: string
+        object:
+          type: string
+          example: response
+        created_at:
+          type: integer
+        model:
+          type: string
+        output:
+          type: array
+          items:
+            type: object
+        usage:
+          type: object
   securitySchemes:
     BearerAuth:
       type: http

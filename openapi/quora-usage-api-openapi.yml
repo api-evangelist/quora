@@ -73,12 +73,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    CurrentBalance:
-      type: object
-      properties:
-        current_point_balance:
-          type: integer
-          description: Available Poe points.
     PointsHistoryEntry:
       type: object
       properties:
@@ -103,18 +97,12 @@ components:
           type: string
         canvas_app_name:
           type: string
-    Error:
+    CurrentBalance:
       type: object
       properties:
-        error:
-          type: object
-          properties:
-            type:
-              type: string
-            message:
-              type: string
-            code:
-              type: string
+        current_point_balance:
+          type: integer
+          description: Available Poe points.
     PointsHistory:
       type: object
       properties:
@@ -127,6 +115,18 @@ components:
         next_cursor:
           type: string
           nullable: true
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            type:
+              type: string
+            message:
+              type: string
+            code:
+              type: string
   responses:
     Unauthorized:
       description: Invalid or missing API key.
