@@ -2,6 +2,13 @@
   "repo": "quora",
   "feeds": [
     {
+      "source": "https://www.quora.com/topic/News",
+      "feed_url": "https://www.quora.com/topic/News",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
       "source": "https://quorablog.quora.com/",
       "feed_url": "https://quorablog.quora.com/",
       "title": "",
@@ -9,6 +16,6 @@
       "method": "none"
     }
   ],
-  "fetched": "2026-10-03T12:30:02Z",
+  "fetched": "2026-10-10T13:15:00Z",
   "post_count": 0
 }
