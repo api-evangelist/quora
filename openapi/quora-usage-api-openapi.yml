@@ -72,6 +72,13 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
+  responses:
+    Unauthorized:
+      description: Invalid or missing API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
     Error:
       type: object
@@ -85,6 +92,24 @@ components:
               type: string
             code:
               type: string
+    CurrentBalance:
+      type: object
+      properties:
+        current_point_balance:
+          type: integer
+          description: Available Poe points.
+    PointsHistory:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/PointsHistoryEntry'
+        has_more:
+          type: boolean
+        next_cursor:
+          type: string
+          nullable: true
     PointsHistoryEntry:
       type: object
       properties:
@@ -109,31 +134,6 @@ components:
           type: string
         canvas_app_name:
           type: string
-    PointsHistory:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/PointsHistoryEntry'
-        has_more:
-          type: boolean
-        next_cursor:
-          type: string
-          nullable: true
-    CurrentBalance:
-      type: object
-      properties:
-        current_point_balance:
-          type: integer
-          description: Available Poe points.
-  responses:
-    Unauthorized:
-      description: Invalid or missing API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   securitySchemes:
     BearerAuth:
       type: http

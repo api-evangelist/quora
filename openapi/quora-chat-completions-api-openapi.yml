@@ -48,51 +48,43 @@ paths:
         '429':
           $ref: '#/components/responses/RateLimited'
 components:
+  responses:
+    Unauthorized:
+      description: Invalid or missing API key.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    RateLimited:
+      description: Rate limit exceeded (500 requests per minute).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            type:
-              type: string
-            message:
-              type: string
-            code:
-              type: string
-    ChatCompletionRequest:
+    ChatMessage:
       type: object
       required:
-      - model
-      - messages
+      - role
+      - content
       properties:
-        model:
+        role:
           type: string
-          description: Bot or model identifier (for example `Claude-Sonnet-4.6`).
-        messages:
-          type: array
-          items:
-            $ref: '#/components/schemas/ChatMessage'
-        stream:
-          type: boolean
-          default: false
-        temperature:
-          type: number
-          format: float
-        top_p:
-          type: number
-          format: float
-        max_tokens:
-          type: integer
-        tools:
-          type: array
-          items:
-            type: object
-        tool_choice:
+          enum:
+          - system
+          - user
+          - assistant
+          - tool
+        content:
           oneOf:
           - type: string
-          - type: object
+          - type: array
+            items:
+              type: object
+        name:
+          type: string
+        tool_call_id:
+          type: string
     ChatCompletionResponse:
       type: object
       properties:
@@ -125,42 +117,50 @@ components:
               type: integer
             total_tokens:
               type: integer
-    ChatMessage:
+    ChatCompletionRequest:
       type: object
       required:
-      - role
-      - content
+      - model
+      - messages
       properties:
-        role:
+        model:
           type: string
-          enum:
-          - system
-          - user
-          - assistant
-          - tool
-        content:
+          description: Bot or model identifier (for example `Claude-Sonnet-4.6`).
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/ChatMessage'
+        stream:
+          type: boolean
+          default: false
+        temperature:
+          type: number
+          format: float
+        top_p:
+          type: number
+          format: float
+        max_tokens:
+          type: integer
+        tools:
+          type: array
+          items:
+            type: object
+        tool_choice:
           oneOf:
           - type: string
-          - type: array
-            items:
-              type: object
-        name:
-          type: string
-        tool_call_id:
-          type: string
-  responses:
-    Unauthorized:
-      description: Invalid or missing API key.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    RateLimited:
-      description: Rate limit exceeded (500 requests per minute).
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+          - type: object
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            type:
+              type: string
+            message:
+              type: string
+            code:
+              type: string
   securitySchemes:
     BearerAuth:
       type: http
