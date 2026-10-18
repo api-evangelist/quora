@@ -84,5 +84,5 @@
     - connectors/applications/quora-ads
     vendor_link: https://www.quora.com/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
