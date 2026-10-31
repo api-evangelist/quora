@@ -1,4 +1,4 @@
-# Quora (quora)
+# Quora
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,92 +66,126 @@
 
 Quora is a question-and-answer platform where users ask questions, share knowledge, and learn from experts on a wide variety of topics.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/quora/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/quora/refs/heads/main/apis.yml)
+**Areas:** Community · Knowledge · Q&A
 
-## Scope
+## Quora on APIs.io
 
-- **Type:** Index
-- **Access:** 3rd-Party
+Everything profiled for Quora is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/quora/](https://apis.io/providers/quora/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (5)
 
-- Community
-- Knowledge
-- Q&A
+- [Quora Ads Conversion API](https://apis.io/apis/quora/quora-ads-conversion-api/) — The Quora Ads Conversion API (CAPI) allows advertisers to send events such as website events, app installs, and offline conversions directly to Quora Ads…
+- [Quora Models API](https://apis.io/apis/quora/quora-models-api/) — Discover available bots and models.
+- [Quora Responses API](https://apis.io/apis/quora/quora-responses-api/) — Advanced Responses API supporting reasoning, web search, and structured outputs.
+- [Quora Usage API](https://apis.io/apis/quora/quora-usage-api/) — Track point balance and usage history.
+- [Quora Chat Completions API](https://apis.io/apis/quora/quora-chat-completions-api/) — OpenAI-compatible chat completion endpoints.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-24
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Quora Ads Conversion API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Quora Ads Conversion API (CAPI) allows advertisers to send events such as website events, app installs, and offline conversions directly to Quora Ads Manager. This server-to-server integration enables real-time data connections that improve conversion match rates, increasing return on ad spend (ROAS) and lowering cost per action (CPA).
+- [Quora Agentic Access](https://apis.io/agentic-access/quora/quora-agentic-access/)
 
-- **Human URL:** [https://www.quora.com/ads/conversion_api_doc](https://www.quora.com/ads/conversion_api_doc)
+#### Collections (5)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Advertising
-- Conversions
-- Marketing
+- [Poe Chat API](https://apis.io/collections/quora/open-quora-chat-api/)
+- [Poe Chat Models API](https://apis.io/collections/quora/open-quora-models-api/)
+- [Poe API](https://apis.io/collections/quora/open-quora-poe-api/)
+- [Poe Chat Responses API](https://apis.io/collections/quora/open-quora-responses-api/)
+- [Poe Chat Usage API](https://apis.io/collections/quora/open-quora-usage-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://www.quora.com/ads/conversion_api_doc)
-- [Getting Started](https://quoraadsupport.zendesk.com/hc/en-us/articles/23065751885069-Conversion-API-Overview)
-- [Partners](https://business.quora.com/api-partners)
-- [Postman Collection](collections/quora-poe-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/quora-poe-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### Poe API
+- [Quora Authentication](https://apis.io/security/quora/quora-authentication/)
+- [Quora Domain Security](https://apis.io/security/quora/quora-domain-security/)
 
-The Poe API is a developer platform by Quora that provides access to hundreds of AI models and bots through a single OpenAI-compatible interface. Developers can access frontier models from major labs including Claude, GPT-4, Gemini, and open-source models, as well as millions of community-created bots, all through one API key and billing system. The platform supports text, image, video, and audio generation modalities.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://creator.poe.com/](https://creator.poe.com/)
-- **Base URL:** `https://api.poe.com/v1`
+Published plans, tiers and prices.
 
-#### Tags
+- [Quora Plans Pricing](https://apis.io/plans/quora/quora-plans-pricing/)
 
-- AI
-- Chatbots
-- Generative AI
-- Large Language Models
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Documentation](https://creator.poe.com/docs)
-- [Getting Started](https://creator.poe.com/docs/quick-start)
-- [API Reference](https://creator.poe.com/api-reference)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/quora/refs/heads/main/openapi/quora-poe-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Open A I Compatible](https://creator.poe.com/docs/external-applications/openai-compatible-api)
-- [Anthropic Compatible](https://creator.poe.com/docs/external-applications/anthropic-compatible-api)
-- [Specification](https://creator.poe.com/docs/server-bots/poe-protocol-specification)
-- [S D Ks](https://creator.poe.com/docs/server-bots/fastapi_poe-python-reference)
-- [Usage A P I](https://creator.poe.com/docs/resources/usage-api)
-- [Changelog](https://creator.poe.com/changelog)
-- [Authentication](https://poe.com/api/keys)
-- [S D Ks](https://github.com/poe-platform/fastapi_poe)
-- [Postman Collection](collections/quora-poe-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/quora-poe-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Quora Rate Limits](https://apis.io/rate-limits/quora/quora-rate-limits/)
 
-## Common Properties
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Quora Finops](https://apis.io/finops/quora/quora-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.quora.com/)
-- [Sign Up](https://www.quora.com/)
-- [Login](https://www.quora.com/)
-- [Blog](https://quorablog.quora.com/)
 - [Support](https://help.quora.com/)
-- [Terms of Service](https://help.quora.com/hc/en-us/articles/360000470706-Platform-Policies)
-- [Privacy Policy](https://www.quora.com/about/privacy)
-- [About](https://www.quora.com/about)
-- [Portal](https://business.quora.com/)
-- [Portal](https://creator.poe.com/)
-- [Website](https://poe.com/)
-- [Support](https://help.poe.com/)
-- [X (Twitter)](https://twitter.com/Quora)
-- [LinkedIn](https://www.linkedin.com/company/quora-inc-)
-- [Git Hub](https://github.com/quora)
-- [Git Hub](https://github.com/poe-platform)
+- [Blog](https://www.quora.com/topic/News)
+- [Terms of service](https://help.quora.com/hc/en-us/articles/360000470706-Platform-Policies)
+- [Privacy policy](https://www.quora.com/about/privacy)
+
+## API Evangelist rating
+
+**Kin Score 41.2** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 33.9 |
+| Contract quality | 51.4 |
+| Contract governance | 0.0 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 64.3 |
+| Access clarity | 42.1 |
+
+**Agent readiness 20.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | partial |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 19.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/quora/](https://apis.io/providers/quora/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Quora: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/quora/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
